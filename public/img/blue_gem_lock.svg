@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- shackle -->
+  <rect x="10" y="2" width="12" height="3" rx="1" fill="#1E4D8C"/>
+  <rect x="8" y="4" width="3" height="8" rx="1" fill="#1E4D8C"/>
+  <rect x="21" y="4" width="3" height="8" rx="1" fill="#1E4D8C"/>
+  <rect x="10" y="2" width="12" height="2" fill="#3A7BD5"/>
+  <!-- body -->
+  <rect x="4" y="12" width="24" height="18" rx="3" fill="#1A5CB8"/>
+  <rect x="4" y="12" width="24" height="5" rx="2" fill="#3A8AE0"/>
+  <!-- shine -->
+  <rect x="6" y="13" width="8" height="2" rx="1" fill="#90C8FF" opacity="0.6"/>
+  <!-- gem shape -->
+  <polygon points="16,16 20,19 18,25 14,25 12,19" fill="#0A2D6B"/>
+  <polygon points="16,16 20,19 16,17.5" fill="#4A9EE8"/>
+  <polygon points="16,16 12,19 16,17.5" fill="#2A7EC8"/>
+</svg>

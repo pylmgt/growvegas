@@ -1,0 +1,54 @@
+<svg width="100%" viewBox="0 0 680 420" role="img" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <radialGradient id="bbg" cx="50%" cy="30%" r="70%"><stop offset="0%" stop-color="#1a1000"/><stop offset="100%" stop-color="#070500"/></radialGradient>
+  <radialGradient id="bglow" cx="50%" cy="35%" r="50%"><stop offset="0%" stop-color="#d97706" stop-opacity="0.45"/><stop offset="100%" stop-color="#d97706" stop-opacity="0"/></radialGradient>
+  <radialGradient id="gemg" cx="50%" cy="30%" r="60%"><stop offset="0%" stop-color="#fff" stop-opacity="0.9"/><stop offset="50%" stop-color="#60a5fa" stop-opacity="0.7"/><stop offset="100%" stop-color="#1d4ed8" stop-opacity="0.6"/></radialGradient>
+  <radialGradient id="gemr" cx="50%" cy="30%" r="60%"><stop offset="0%" stop-color="#fff" stop-opacity="0.9"/><stop offset="50%" stop-color="#f87171" stop-opacity="0.7"/><stop offset="100%" stop-color="#b91c1c" stop-opacity="0.6"/></radialGradient>
+  <radialGradient id="geme" cx="50%" cy="30%" r="60%"><stop offset="0%" stop-color="#fff" stop-opacity="0.9"/><stop offset="50%" stop-color="#4ade80" stop-opacity="0.7"/><stop offset="100%" stop-color="#15803d" stop-opacity="0.6"/></radialGradient>
+  <clipPath id="bcard"><rect width="680" height="420" rx="18"/></clipPath>
+</defs>
+<g clip-path="url(#bcard)">
+<rect width="680" height="420" fill="url(#bbg)"/>
+<ellipse cx="340" cy="140" rx="260" ry="200" fill="url(#bglow)"/>
+<rect x="316" y="0" width="48" height="16" rx="3" fill="#8a6300"/>
+<rect x="320" y="4" width="40" height="8" rx="2" fill="#d97706"/>
+<rect x="328" y="6" width="24" height="4" fill="#fbbf24"/>
+<line x1="340" y1="16" x2="340" y2="55" stroke="#d97706" stroke-width="4"/>
+<rect x="334" y="28" width="12" height="8" rx="2" fill="#d97706"/>
+<rect x="336" y="30" width="8" height="4" fill="#fbbf24"/>
+<ellipse cx="340" cy="75" rx="70" ry="16" fill="#8a6300" stroke="#d97706" stroke-width="1.5"/>
+<ellipse cx="340" cy="73" rx="66" ry="12" fill="#d97706"/>
+<ellipse cx="340" cy="71" rx="58" ry="8" fill="#fbbf24"/>
+<rect x="278" y="68" width="6" height="6" fill="#f5c842"/><rect x="296" y="64" width="6" height="6" fill="#f5c842"/><rect x="314" y="62" width="6" height="6" fill="#f5c842"/><rect x="332" y="61" width="6" height="6" fill="#f5c842"/><rect x="350" y="62" width="6" height="6" fill="#f5c842"/><rect x="368" y="64" width="6" height="6" fill="#f5c842"/><rect x="386" y="68" width="6" height="6" fill="#f5c842"/>
+<line x1="340" y1="75" x2="230" y2="110" stroke="#b45309" stroke-width="3"/><line x1="340" y1="75" x2="265" y2="118" stroke="#b45309" stroke-width="3"/><line x1="340" y1="75" x2="295" y2="120" stroke="#b45309" stroke-width="2.5"/>
+<line x1="340" y1="75" x2="450" y2="110" stroke="#b45309" stroke-width="3"/><line x1="340" y1="75" x2="415" y2="118" stroke="#b45309" stroke-width="3"/><line x1="340" y1="75" x2="385" y2="120" stroke="#b45309" stroke-width="2.5"/>
+<rect x="218" y="108" width="24" height="8" rx="2" fill="#d97706"/><line x1="230" y1="116" x2="230" y2="145" stroke="#f5f5dc" stroke-width="5"/><ellipse cx="230" cy="140" rx="5" ry="7" fill="#fb923c" opacity="0.9"/><ellipse cx="230" cy="138" rx="3" ry="4" fill="#fef08a" opacity="0.95"/>
+<rect x="253" y="116" width="24" height="8" rx="2" fill="#d97706"/><line x1="265" y1="124" x2="265" y2="155" stroke="#f5f5dc" stroke-width="5"/><ellipse cx="265" cy="150" rx="5" ry="7" fill="#fb923c" opacity="0.9"/><ellipse cx="265" cy="148" rx="3" ry="4" fill="#fef08a" opacity="0.95"/>
+<rect x="283" y="118" width="24" height="8" rx="2" fill="#d97706"/><line x1="295" y1="126" x2="295" y2="155" stroke="#f5f5dc" stroke-width="5"/><ellipse cx="295" cy="150" rx="5" ry="7" fill="#fb923c" opacity="0.9"/><ellipse cx="295" cy="148" rx="3" ry="4" fill="#fef08a" opacity="0.95"/>
+<rect x="373" y="118" width="24" height="8" rx="2" fill="#d97706"/><line x1="385" y1="126" x2="385" y2="155" stroke="#f5f5dc" stroke-width="5"/><ellipse cx="385" cy="150" rx="5" ry="7" fill="#fb923c" opacity="0.9"/><ellipse cx="385" cy="148" rx="3" ry="4" fill="#fef08a" opacity="0.95"/>
+<rect x="403" y="116" width="24" height="8" rx="2" fill="#d97706"/><line x1="415" y1="124" x2="415" y2="155" stroke="#f5f5dc" stroke-width="5"/><ellipse cx="415" cy="150" rx="5" ry="7" fill="#fb923c" opacity="0.9"/><ellipse cx="415" cy="148" rx="3" ry="4" fill="#fef08a" opacity="0.95"/>
+<rect x="438" y="108" width="24" height="8" rx="2" fill="#d97706"/><line x1="450" y1="116" x2="450" y2="145" stroke="#f5f5dc" stroke-width="5"/><ellipse cx="450" cy="140" rx="5" ry="7" fill="#fb923c" opacity="0.9"/><ellipse cx="450" cy="138" rx="3" ry="4" fill="#fef08a" opacity="0.95"/>
+<line x1="340" y1="83" x2="340" y2="155" stroke="#b45309" stroke-width="2"/>
+<ellipse cx="340" cy="165" rx="18" ry="22" fill="#8a6300" stroke="#fbbf24" stroke-width="1.5"/>
+<ellipse cx="340" cy="163" rx="12" ry="16" fill="url(#gemg)"/>
+<rect x="334" y="157" width="6" height="6" fill="#fff" opacity="0.5"/>
+<g transform="translate(200,175)"><polygon points="10,0 18,8 10,20 2,8" fill="url(#gemg)" stroke="#93c5fd" stroke-width="0.8"/><rect x="7" y="2" width="4" height="4" fill="#fff" opacity="0.6"/></g>
+<g transform="translate(470,178)"><polygon points="10,0 18,8 10,20 2,8" fill="url(#gemg)" stroke="#93c5fd" stroke-width="0.8"/><rect x="7" y="2" width="4" height="4" fill="#fff" opacity="0.6"/></g>
+<g transform="translate(155,200)"><polygon points="12,0 22,10 12,24 2,10" fill="url(#gemr)" stroke="#fca5a5" stroke-width="0.8"/><rect x="8" y="3" width="5" height="5" fill="#fff" opacity="0.5"/></g>
+<g transform="translate(505,195)"><polygon points="12,0 22,10 12,24 2,10" fill="url(#gemr)" stroke="#fca5a5" stroke-width="0.8"/><rect x="8" y="3" width="5" height="5" fill="#fff" opacity="0.5"/></g>
+<g transform="translate(260,195)"><polygon points="8,0 14,6 8,16 2,6" fill="url(#geme)" stroke="#86efac" stroke-width="0.8"/><rect x="5" y="2" width="4" height="4" fill="#fff" opacity="0.5"/></g>
+<g transform="translate(410,198)"><polygon points="8,0 14,6 8,16 2,6" fill="url(#geme)" stroke="#86efac" stroke-width="0.8"/><rect x="5" y="2" width="4" height="4" fill="#fff" opacity="0.5"/></g>
+<g><rect x="0" y="260" width="24" height="24" fill="#3d2800" stroke="#5c3d00" stroke-width="1"/><rect x="24" y="260" width="24" height="24" fill="#2a1d00" stroke="#5c3d00" stroke-width="1"/><rect x="0" y="284" width="24" height="24" fill="#2a1d00" stroke="#5c3d00" stroke-width="1"/><rect x="24" y="284" width="24" height="24" fill="#3d2800" stroke="#5c3d00" stroke-width="1"/><rect x="0" y="308" width="24" height="24" fill="#3d2800" stroke="#5c3d00" stroke-width="1"/><rect x="24" y="308" width="24" height="24" fill="#2a1d00" stroke="#5c3d00" stroke-width="1"/></g>
+<g><rect x="632" y="260" width="24" height="24" fill="#3d2800" stroke="#5c3d00" stroke-width="1"/><rect x="656" y="260" width="24" height="24" fill="#2a1d00" stroke="#5c3d00" stroke-width="1"/><rect x="632" y="284" width="24" height="24" fill="#2a1d00" stroke="#5c3d00" stroke-width="1"/><rect x="656" y="284" width="24" height="24" fill="#3d2800" stroke="#5c3d00" stroke-width="1"/><rect x="632" y="308" width="24" height="24" fill="#3d2800" stroke="#5c3d00" stroke-width="1"/><rect x="656" y="308" width="24" height="24" fill="#2a1d00" stroke="#5c3d00" stroke-width="1"/></g>
+<rect x="140" y="130" width="4" height="4" fill="#fbbf24" opacity="0.9"/><rect x="142" y="132" width="2" height="2" fill="#fff" opacity="0.8"/><rect x="530" y="120" width="4" height="4" fill="#fbbf24" opacity="0.9"/><rect x="532" y="122" width="2" height="2" fill="#fff" opacity="0.8"/>
+<rect x="270" y="228" width="60" height="28" rx="4" fill="#1a1000" stroke="#d97706" stroke-width="1.5"/><text x="300" y="248" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="15" font-weight="900" fill="#fbbf24">+10</text>
+<rect x="354" y="228" width="60" height="28" rx="4" fill="#1a1000" stroke="#d97706" stroke-width="1.5"/><text x="384" y="248" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="15" font-weight="900" fill="#fbbf24">+7</text>
+<rect x="0" y="330" width="680" height="90" fill="#070500" opacity="0.95"/>
+<line x1="0" y1="330" x2="680" y2="330" stroke="#d97706" stroke-width="1.5" opacity="0.6"/>
+<rect x="0" y="330" width="8" height="8" fill="#d97706"/><rect x="672" y="330" width="8" height="8" fill="#d97706"/>
+<polygon points="50,357 53,348 56,357 65,357 58,363 61,372 53,366 45,372 48,363 41,357" fill="#f5c842" opacity="0.9"/>
+<polygon points="630,357 633,348 636,357 645,357 638,363 641,372 633,366 625,372 628,363 621,357" fill="#f5c842" opacity="0.9"/>
+<text x="340" y="378" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="48" font-weight="900" fill="#fff" letter-spacing="12">BJ</text>
+<text x="340" y="408" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#fbbf24" letter-spacing="3">GrowVegas</text>
+</g>
+</svg>

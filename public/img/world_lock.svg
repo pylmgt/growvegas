@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- shackle -->
+  <rect x="10" y="2" width="12" height="3" rx="1" fill="#8B6914"/>
+  <rect x="8" y="4" width="3" height="8" rx="1" fill="#8B6914"/>
+  <rect x="21" y="4" width="3" height="8" rx="1" fill="#8B6914"/>
+  <rect x="10" y="2" width="12" height="2" fill="#C8961E"/>
+  <!-- body -->
+  <rect x="4" y="12" width="24" height="18" rx="3" fill="#5BA05B"/>
+  <rect x="4" y="12" width="24" height="5" rx="2" fill="#7ACC7A"/>
+  <!-- shine -->
+  <rect x="6" y="13" width="8" height="2" rx="1" fill="#A0F0A0" opacity="0.6"/>
+  <!-- keyhole -->
+  <circle cx="16" cy="21" r="3" fill="#2D6B2D"/>
+  <rect x="15" y="22" width="2" height="5" rx="1" fill="#2D6B2D"/>
+  <circle cx="16" cy="21" r="1.5" fill="#7ACC7A"/>
+</svg>

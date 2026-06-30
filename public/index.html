@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>GrowVegas</title>
+<link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+<link rel="apple-touch-icon" href="/favicon.ico"/>
+<link rel="stylesheet" href="/css/style.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<!-- ── AUTH OVERLAY ─────────────────────────────────────────── -->
+<div id="auth-overlay" class="auth-overlay">
+  <div class="auth-card">
+    <div class="auth-brand">
+      <img src="/img/diamond_lock.png" class="auth-logo" alt="GrowVegas"/>
+      <span class="auth-title">GrowVegas</span>
+    </div>
+    <div class="auth-tabs">
+      <button class="atab active" data-tab="login">Sign In</button>
+      <button class="atab" data-tab="register">Register</button>
+    </div>
+    <div id="auth-login" class="auth-form">
+      <input id="login-user" type="text" placeholder="Username" class="inp"/>
+      <input id="login-pass" type="password" placeholder="Password" class="inp"/>
+      <button id="login-btn" class="btn-primary w100">Sign In</button>
+    </div>
+    <div id="auth-register" class="auth-form hidden">
+      <input id="reg-user" type="text" placeholder="Username (3–20)" class="inp"/>
+      <input id="reg-pass" type="password" placeholder="Password (6+)" class="inp"/>
+      <input id="reg-ref" type="text" placeholder="Referral code (optional)" class="inp" style="text-transform:uppercase"/>
+      <button id="register-btn" class="btn-primary w100">Create Account</button>
+      <div class="auth-bonus-note">🎁 Use a referral code to get 5 free DL!</div>
+    </div>
+    <div id="auth-error" class="auth-error hidden"></div>
+  </div>
+</div>
+
+<!-- ── PLATFORM ──────────────────────────────────────────────── -->
+<div id="platform" class="hidden">
+<div class="shell">
+  <!-- Mobile sidebar overlay -->
+  <div class="sidebar-overlay hidden" id="sidebar-overlay"></div>
+  <!-- Mobile chat overlay -->
+  <div class="sidebar-overlay hidden" id="chat-overlay"></div>
+
+  <!-- ══ LEFT SIDEBAR ══ -->
+  <aside class="sidebar" id="sidebar">
+    <!-- Mobile-only hide button -->
+    <button class="sidebar-hide-btn" id="sidebar-hide-btn">✕ Hide Sidebar</button>
+
+    <!-- Logo -->
+    <div class="sidebar-logo">
+      <img src="/img/diamond_lock.png" class="slogo-img dl-slogo" alt="GV"/>
+      <span class="slogo-text">GrowVegas</span>
+    </div>
+
+    <!-- Nav -->
+    <nav class="snav">
+      <button class="snav-btn snav-home" data-page="home" id="home-btn">
+        <svg class="snav-ico" viewBox="0 0 20 20" fill="currentColor"><path d="M10 2L2 8v10h5v-6h6v6h5V8z"/></svg>
+        <span class="snav-label-text" data-i18n="nav_home">Home</span>
+      </button>
+
+      <div class="snav-section" data-i18n="section_games">GAMES</div>
+      <button class="snav-btn" data-page="play" data-mode="VEME">
+        <svg class="snav-ico" viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5" fill="none"/><circle cx="10" cy="10" r="3"/></svg>
+        <span class="snav-label-text">VEME</span>
+      </button>
+      <button class="snav-btn" data-page="play" data-mode="QQ">
+        <svg class="snav-ico" viewBox="0 0 20 20" fill="currentColor"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="11" y="3" width="6" height="6" rx="1"/><rect x="3" y="11" width="6" height="6" rx="1"/><rect x="11" y="11" width="6" height="6" rx="1"/></svg>
+        <span class="snav-label-text">QQ</span>
+      </button>
+      <button class="snav-btn" data-page="play" data-mode="CSN">
+        <svg class="snav-ico" viewBox="0 0 20 20" fill="currentColor"><path d="M10 2l2.4 5.4L18 8.2l-4 3.9 1 5.5L10 15l-5 2.6 1-5.5-4-3.9 5.6-.8z"/></svg>
+        <span class="snav-label-text">CSN</span>
+      </button>
+      <button class="snav-btn" data-page="play" data-mode="BJ">
+        <svg class="snav-ico" viewBox="0 0 20 20" fill="currentColor"><path d="M10 2C10 2 4 5 4 10c0 3.3 2.7 6 6 6s6-2.7 6-6c0-5-6-8-6-8z"/></svg>
+        <span class="snav-label-text">BJ</span>
+      </button>
+
+      <div class="snav-section" data-i18n="section_community">COMMUNITY</div>
+      <button class="snav-btn" data-page="affiliate">
+        <svg class="snav-ico" viewBox="0 0 20 20" fill="currentColor"><path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zm-9 8a6 6 0 0112 0H4z"/></svg>
+        <span class="snav-label-text" data-i18n="nav_affiliate">Affiliate</span>
+      </button>
+      <button class="snav-btn" data-page="profile">
+        <svg class="snav-ico" viewBox="0 0 20 20" fill="currentColor"><path d="M10 10a4 4 0 100-8 4 4 0 000 8zm-7 8a7 7 0 0114 0H3z"/></svg>
+        <span class="snav-label-text" data-i18n="nav_profile">Profile</span>
+      </button>
+      <button class="snav-btn hidden" data-page="admin" id="admin-nav-btn">
+        <svg class="snav-ico" viewBox="0 0 20 20" fill="currentColor"><path d="M9 2a7 7 0 100 14A7 7 0 009 2zm0 12a5 5 0 110-10 5 5 0 010 10z"/></svg>
+        <span class="snav-label-text" data-i18n="nav_admin">Admin</span>
+      </button>
+    </nav>
+
+    <!-- Language -->
+    <div class="sidebar-langs">
+      <div class="snav-section" data-i18n="section_language">LANGUAGE</div>
+      <div class="lang-grid">
+        <button class="lang-btn active" data-lang="en" title="English">🇬🇧</button>
+        <button class="lang-btn" data-lang="sv" title="Svenska">🇸🇪</button>
+        <button class="lang-btn" data-lang="fi" title="Suomi">🇫🇮</button>
+        <button class="lang-btn" data-lang="tr" title="Türkçe">🇹🇷</button>
+        <button class="lang-btn" data-lang="id" title="Bahasa Indonesia">🇮🇩</button>
+        <button class="lang-btn" data-lang="lt" title="Lietuvių">🇱🇹</button>
+      </div>
+    </div>
+
+    <!-- Discord -->
+    <a class="discord-sidebar" id="discord-sidebar-btn" href="https://discord.gg/REPLACEME" target="_blank" rel="noopener">
+      <svg class="disc-ico-sm" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.492c-1.53-.69-3.17-1.2-4.885-1.49a.075.075 0 0 0-.079.036c-.21.369-.444.85-.608 1.23a18.566 18.566 0 0 0-5.487 0 12.36 12.36 0 0 0-.617-1.23A.077.077 0 0 0 8.562 3c-1.714.29-3.354.8-4.885 1.491a.07.07 0 0 0-.032.027C.533 9.093-.32 13.555.099 17.961a.08.08 0 0 0 .031.055 20.03 20.03 0 0 0 5.993 2.98.078.078 0 0 0 .084-.026 13.83 13.83 0 0 0 1.226-1.963.074.074 0 0 0-.041-.104 13.175 13.175 0 0 1-1.872-.878.075.075 0 0 1-.008-.125c.126-.093.252-.19.372-.287a.075.075 0 0 1 .078-.01c3.927 1.764 8.18 1.764 12.061 0a.075.075 0 0 1 .079.009c.12.098.245.195.372.288a.075.075 0 0 1-.006.125c-.598.344-1.22.635-1.873.877a.075.075 0 0 0-.041.105c.36.687.772 1.341 1.225 1.962a.077.077 0 0 0 .084.028 19.963 19.963 0 0 0 6.002-2.981.076.076 0 0 0 .032-.054c.5-5.094-.838-9.52-3.549-13.442a.06.06 0 0 0-.031-.028z"/></svg>
+      <span class="snav-label-text" data-i18n="join_discord">Join our Discord</span>
+    </a>
+  </aside>
+
+  <!-- ══ MAIN AREA ══ -->
+  <div class="main" id="main-area">
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <div class="tb-left">
+        <button class="tb-menu-btn" id="tb-menu-btn">☰</button>
+        <div class="tb-brand">
+          <img src="/img/diamond_lock.png" class="tb-logo dl-slogo" alt="GV"/>
+          <span class="tb-brand-name">GrowVegas</span>
+        </div>
+      </div>
+
+      <!-- WALLET AREA (center) -->
+      <div class="tb-wallet-wrap">
+        <button class="tb-wallet-btn" id="wallet-btn">
+          <img src="/img/diamond_lock.png" class="dl-icon-sm" id="wallet-cur-icon" alt="DL"/>
+          <span id="balance-display">0</span>
+          <span class="bal-unit" id="bal-unit-display">DL</span>
+          <svg class="wallet-chevron" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+        <!-- Wallet Dropdown -->
+        <div class="wallet-dropdown hidden" id="wallet-dropdown">
+          <div class="wd-header">
+            <img src="/img/diamond_lock.png" class="dl-icon-md" alt="DL"/>
+            <div>
+              <div class="wd-bal" id="wd-dropdown-bal">0 DL</div>
+              <div class="wd-sub">Your balance</div>
+            </div>
+          </div>
+          <div class="wd-actions">
+            <button class="wd-action-btn wd-dep" id="wd-dep-btn">
+              <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 2v10M6 8l4 4 4-4M3 16h14"/></svg>
+              Deposit
+            </button>
+            <button class="wd-action-btn wd-with" id="wd-with-btn">
+              <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 18V8M14 12l-4-4-4 4M3 4h14"/></svg>
+              Withdraw
+            </button>
+          </div>
+          <div class="wd-divider"></div>
+          <div class="wd-currency-label">Display currency</div>
+          <div class="wd-currency-btns">
+            <button class="wd-cur-btn active" data-cur="DL">
+              <img src="/img/diamond_lock.png" class="cur-icon" alt="DL"/> DL
+            </button>
+            <button class="wd-cur-btn" data-cur="WL">
+              <img src="/img/world_lock.png" class="cur-icon" alt="WL"/> WL
+            </button>
+            <button class="wd-cur-btn" data-cur="BGL">
+              <img src="/img/big_diamond_lock.png" class="cur-icon" alt="BGL"/> BGL
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: tip + profile -->
+      <div class="tb-right">
+        <button class="mobile-chat-toggle" id="mobile-chat-toggle" title="Toggle chat">💬</button>
+        <button class="resume-game-btn hidden" id="resume-game-btn" onclick="resumeGame()">
+          ▶ Resume Game
+        </button>
+        <button class="btn-tip-open" id="open-tip-modal">
+          <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm1 11H9v-2h2v2zm0-4H9V6h2v3z"/></svg>
+          Tip
+        </button>
+        <button class="tb-profile-btn" id="tb-profile-btn">
+          <div class="tb-av"><img src="/img/gt_char.png" class="gt-av-tiny" alt=""/></div>
+          <span id="tb-username">—</span>
+          <svg class="wallet-chevron" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+        <!-- Profile Dropdown -->
+        <div class="profile-dropdown hidden" id="profile-dropdown">
+          <div class="pd-header">
+            <div class="pd-av"></div>
+            <div>
+              <div class="pd-name" id="pd-username">—</div>
+              <div class="pd-level" id="pd-level">Level 1</div>
+            </div>
+          </div>
+          <div class="pd-stats">
+            <div class="pd-stat"><div class="pd-stat-val" id="pd-matches">0</div><div class="pd-stat-lbl">Bets</div></div>
+            <div class="pd-stat"><div class="pd-stat-val" id="pd-wins">0</div><div class="pd-stat-lbl">Wins</div></div>
+            <div class="pd-stat"><div class="pd-stat-val" id="pd-losses">0</div><div class="pd-stat-lbl">Losses</div></div>
+            <div class="pd-stat"><div class="pd-stat-val" id="pd-wagered">0</div><div class="pd-stat-lbl">Wagered</div></div>
+          </div>
+          <div class="pd-divider"></div>
+          <button class="pd-link" data-page="profile">👤 Full Profile</button>
+          <button class="pd-link" id="pd-logout">🚪 Sign Out</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- BONUS BANNER -->
+    <div class="bonus-banner hidden" id="bonus-banner">
+      <img src="/img/diamond_lock.png" class="dl-icon-xs" alt=""/>
+      <span>BONUS ACTIVE: <strong>2× DEPOSIT BOOST</strong> — Your next deposit is doubled!</span>
+      <span class="bonus-x">×2</span>
+    </div>
+
+    <!-- PAGES CONTAINER -->
+    <div class="content-area">
+    <div class="pages-container">
+
+      <!-- ══ HOME PAGE ══ -->
+      <div class="page active" id="page-home">
+        <div class="home-main">
+            <div class="home-welcome" id="home-welcome-bar">
+              <div class="hw-left">
+                <div class="hw-greeting" id="hw-greeting">Welcome back!</div>
+                <div class="hw-sub" data-i18n="hw_sub">Pick a game and find your match.</div>
+              </div>
+              <div class="hw-bal">
+                <img src="/img/diamond_lock.png" class="dl-icon-sm" alt="DL"/>
+                <span id="hw-balance">0</span>
+                <span class="hw-bal-unit" id="hw-bal-unit">DL</span>
+              </div>
+            </div>
+
+            <!-- Game cards horizontal scroll -->
+            <div class="games-section">
+              <div class="games-section-hdr">
+                <div class="games-section-title">
+                  <svg width="16" height="16" viewBox="0 0 20 20" fill="#3b82f6"><path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674h4.909c.969 0 1.371 1.24.588 1.81l-3.976 2.888 1.519 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.519-4.674-3.976-2.888c-.783-.57-.38-1.81.588-1.81h4.909l1.519-4.674z"/></svg>
+                  GrowVegas Originals
+                </div>
+              </div>
+              <div class="games-scroll-wrap">
+                <div class="games-scroll" id="games-scroll">
+                  <div class="game-card" onclick="selectAndPlay('VEME')">
+                    <div class="gc-img-wrap"><img src="/img/veme_card.svg" class="gc-img" alt="VEME"/></div>
+                    <div class="gc-footer"><div class="gc-name">VEME</div><div class="gc-tag">GrowVegas</div></div>
+                  </div>
+                  <div class="game-card" onclick="selectAndPlay('QQ')">
+                    <div class="gc-img-wrap"><img src="/img/qq_card.svg" class="gc-img" alt="QQ"/></div>
+                    <div class="gc-footer"><div class="gc-name">QQ</div><div class="gc-tag">GrowVegas</div></div>
+                  </div>
+                  <div class="game-card" onclick="selectAndPlay('CSN')">
+                    <div class="gc-img-wrap"><img src="/img/csn_card.svg" class="gc-img" alt="CSN"/></div>
+                    <div class="gc-footer"><div class="gc-name">CSN</div><div class="gc-tag">GrowVegas</div></div>
+                  </div>
+                  <div class="game-card" onclick="selectAndPlay('BJ')">
+                    <div class="gc-img-wrap"><img src="/img/bj_card.svg" class="gc-img" alt="BJ"/></div>
+                    <div class="gc-footer"><div class="gc-name">BJ</div><div class="gc-tag">GrowVegas</div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Match history (scrolled to below games) -->
+            <div class="home-history-section">
+              <div class="games-section-hdr"><div class="games-section-title">📋 Match History</div></div>
+              <div class="history-list-home" id="match-feed"><div class="empty-msg">No matches yet</div></div>
+            </div>
+
+            <!-- Mobile-only lobby section -->
+            <div class="mobile-lobby-section">
+              <div class="games-section-hdr"><div class="games-section-title"><span class="green-dot"></span>Live Lobby</div></div>
+              <div class="mobile-lobby-hint">Click a bet to join instantly</div>
+              <div class="lobby-list" id="lobby-list-mobile"><div class="empty-msg">No one queuing</div></div>
+            </div>
+        </div>
+      </div>
+
+      <!-- ══ PLAY PAGE ══ -->
+      <div class="page" id="page-play">
+        <div class="play-layout">
+          <div class="arena-col">
+            <!-- IDLE -->
+            <div class="astate" id="state-idle">
+              <div class="idle-card">
+                <div class="idle-mode-row">
+                  <span class="mode-badge" id="gi-mode">VEME</span>
+                  <span class="mode-rule" id="gi-rule">Roll 0–36 · 0 = Instant Win · Highest wins</span>
+                </div>
+                <div class="idle-avatars">
+                  <div class="idle-av-slot">
+                    <div class="idle-av-wrap">
+                      <img src="/img/gt_char.png" class="idle-av-img" alt="You"/>
+                      <div class="idle-av-label" id="idle-av-you">You</div>
+                    </div>
+                  </div>
+                  <div class="idle-av-vs">VS</div>
+                  <div class="idle-av-slot idle-av-slot-opp">
+                    <div class="idle-av-wrap">
+                      <div class="idle-av-unknown">?</div>
+                      <div class="idle-av-label">Opponent</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="bet-panel">
+                  <div class="bet-row">
+                    <div class="bet-field">
+                      <img src="/img/diamond_lock.png" class="dl-icon-xs bet-dl-icon" id="bet-cur-icon" alt="DL"/>
+                      <input id="bet-amount" type="number" min="1" placeholder="0" class="bet-inp"/>
+                    </div>
+                    <button class="btn-sm" id="bet-half">½</button>
+                    <button class="btn-sm" id="bet-double">2×</button>
+                    <button class="btn-sm" id="bet-max">Max</button>
+                  </div>
+                  <button class="btn-play" id="join-queue-btn">▶ <span data-i18n="find_match_btn">Find Match</span></button>
+                  <div class="bet-note">Winner gets 90% · House 10%</div>
+                </div>
+                <div class="spectator-banner hidden" id="spectator-banner">👁 Spectating mode — read only</div>
+              </div>
+            </div>
+            <!-- QUEUE -->
+            <div class="astate hidden" id="state-queue">
+              <div class="queue-card">
+                <div class="queue-avatars">
+                  <div class="queue-av-slot">
+                    <img src="/img/gt_char.png" class="queue-av-img" alt="You"/>
+                    <div class="queue-av-label" id="queue-av-you">You</div>
+                  </div>
+                  <div class="queue-searching">
+                    <div class="queue-dots"><span></span><span></span><span></span></div>
+                    <div class="queue-searching-lbl">Searching</div>
+                  </div>
+                  <div class="queue-av-slot queue-av-unknown">
+                    <div class="queue-av-placeholder">?</div>
+                    <div class="queue-av-label">Waiting...</div>
+                  </div>
+                </div>
+                <div class="queue-info-text" id="queue-info"></div>
+                <button class="btn-ghost" id="leave-queue-btn">Cancel</button>
+              </div>
+            </div>
+            <!-- MATCH FOUND -->
+            <div class="astate hidden" id="state-match-found">
+              <div class="vs-card">
+                <div class="vs-hdr">⚔ Match Found</div>
+                <div class="vs-body">
+                  <div class="vs-side"><div class="vs-av you-av"><img src="/img/gt_char.png" class="gt-av-img" alt="You"/></div><div class="vs-name" id="vs-you">You</div><div class="vs-tag you-tag">YOU</div></div>
+                  <div class="vs-mid"><div class="vs-vs">VS</div><div class="vs-mode" id="vs-mode-tag"></div><div class="vs-pot" id="vs-pot"></div></div>
+                  <div class="vs-side"><div class="vs-av opp-av"><img src="/img/gt_char.png" class="gt-av-img" alt="Opp"/></div><div class="vs-name" id="vs-opp">Opponent</div><div class="vs-tag opp-tag">OPP</div></div>
+                </div>
+              </div>
+            </div>
+            <!-- COUNTDOWN -->
+            <div class="astate hidden" id="state-countdown">
+              <div class="cd-num" id="countdown-num">3</div>
+              <div class="cd-lbl">Get Ready</div>
+            </div>
+            <!-- BJ -->
+            <div class="astate hidden" id="state-bj">
+              <div class="game-room-bg bj-room-bg"></div>
+              <div class="bj-arena">
+                <div class="bj-side">
+                  <div class="bj-pname" id="bj-name-me">You</div>
+                  <div class="bj-score" id="bj-score-me">0 <span class="bj-sub">gems</span></div>
+                  <div class="bj-chan"><img src="/img/chandelier.png" class="chan-img" id="chan-me"/><div class="gem-burst" id="burst-me"></div></div>
+                  <div class="bj-pills" id="bj-cards-me"></div>
+                  <div class="bj-rnd">Round <span id="bj-rnd-me">0</span>/3</div>
+                </div>
+                <div class="bj-div"><div class="bj-divl"></div><div class="bj-divlabel">VS</div><div class="bj-divl"></div></div>
+                <div class="bj-side">
+                  <div class="bj-pname" id="bj-name-opp">Opponent</div>
+                  <div class="bj-score" id="bj-score-opp">0 <span class="bj-sub">gems</span></div>
+                  <div class="bj-chan"><img src="/img/chandelier.png" class="chan-img" id="chan-opp"/><div class="gem-burst" id="burst-opp"></div></div>
+                  <div class="bj-pills" id="bj-cards-opp"></div>
+                  <div class="bj-rnd">Round <span id="bj-rnd-opp">0</span>/3</div>
+                </div>
+              </div>
+              <div class="bj-rule">Closest to 21 wins · Over 21 = BUST 💥 · Up to 3 rounds</div>
+              <div class="bj-action-panel hidden" id="bj-action-panel">
+                <div class="bj-action-prompt" id="bj-action-prompt">Your turn — Hit or Stand?</div>
+                <div class="bj-action-timer"><span id="bj-timer-bar-wrap"><span class="bj-timer-bar" id="bj-timer-bar"></span></span><span id="bj-timer-txt">10s</span></div>
+                <div class="bj-action-btns">
+                  <button class="bj-hit-btn" id="bj-hit-btn">💥 HIT</button>
+                  <button class="bj-stand-btn" id="bj-stand-btn">✋ STAND</button>
+                </div>
+              </div>
+            </div>
+            <!-- SPINNING -->
+            <div class="astate hidden" id="state-spinning">
+              <div class="game-room-bg" id="spin-room-bg"></div>
+              <div class="spin-card">
+                <div class="spin-avatars">
+                  <div class="spin-av-slot">
+                    <img src="/img/gt_char.png" class="spin-av-img spin-av-bounce" alt="P1"/>
+                    <div class="spin-av-score hidden" id="spin-score-me"></div>
+                  </div>
+                  <div class="spin-center">
+                    <div class="spin-orb" id="spin-orb"></div>
+                    <div class="spin-label" id="spin-label">Rolling...</div>
+                  </div>
+                  <div class="spin-av-slot">
+                    <img src="/img/gt_char.png" class="spin-av-img spin-av-bounce-delay" alt="P2"/>
+                    <div class="spin-av-score hidden" id="spin-score-opp"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- RESULT -->
+            <div class="astate hidden" id="state-result">
+              <div class="result-avatars" id="result-avatars">
+                <div class="result-av-slot" id="result-av-me">
+                  <div class="result-av-wrap">
+                    <img src="/img/gt_char.png" class="result-av-img" id="result-av-img-me" alt=""/>
+                    <div class="result-av-score hidden" id="result-av-score-me"></div>
+                  </div>
+                  <div class="result-av-name" id="result-av-name-me">You</div>
+                </div>
+                <div class="result-av-vs">VS</div>
+                <div class="result-av-slot" id="result-av-opp">
+                  <div class="result-av-wrap">
+                    <img src="/img/gt_char.png" class="result-av-img" id="result-av-img-opp" alt=""/>
+                    <div class="result-av-score hidden" id="result-av-score-opp"></div>
+                  </div>
+                  <div class="result-av-name" id="result-av-name-opp">Opponent</div>
+                </div>
+              </div>
+              <div class="result-banner" id="result-header"></div>
+              <div class="result-scores" id="result-scores"></div>
+              <div class="result-reason" id="result-reason"></div>
+              <div class="result-payout" id="result-payout"></div>
+              <div class="result-bal">Balance: <strong id="result-balance">0</strong> <span id="result-bal-unit">DL</span></div>
+            </div>
+            <!-- REMATCH -->
+            <div class="astate hidden" id="state-rematch">
+              <div class="rematch-card">
+                <div class="rm-echo" id="rm-echo"></div>
+                <div class="rm-opp"><div class="opp-dot" id="opp-dot"></div><span id="opp-rm-text">Waiting...</span></div>
+                <div class="rm-timer">Expires in <span id="rm-cd">30</span>s</div>
+                <div class="rm-btns">
+                  <button class="btn-primary" id="btn-rematch">⚔ Rematch</button>
+                  <button class="btn-ghost" id="btn-lobby">🏠 Lobby</button>
+                </div>
+                <div class="rm-status" id="rm-status"></div>
+              </div>
+            </div>
+            <!-- VOTE -->
+            <div class="astate hidden" id="state-vote">
+              <div class="vote-card">
+                <div class="vote-title">Pick Your Mode</div>
+                <div class="vote-sub">Same pick = instant start · Different = wheel decides!</div>
+                <div class="vote-grid">
+                  <button class="vote-btn" data-vote="VEME">🎰<span>VEME</span></button>
+                  <button class="vote-btn" data-vote="QQ">🃏<span>QQ</span></button>
+                  <button class="vote-btn" data-vote="CSN">⚡<span>CSN</span></button>
+                  <button class="vote-btn" data-vote="BJ">💎<span>BJ</span></button>
+                </div>
+                <div class="vote-wait" id="vote-wait"></div>
+              </div>
+            </div>
+            <!-- VOTE SPIN -->
+            <div class="astate hidden" id="state-vote-spin">
+              <div class="vspin-card">
+                <div class="vspin-title">🎲 Deciding Mode...</div>
+                <div class="vspin-sub" id="vspin-sub"></div>
+                <div class="vspin-orb-wrap">
+                  <div class="vspin-orb" id="vspin-orb"></div>
+                </div>
+                <div class="vspin-result hidden" id="vspin-result"></div>
+              </div>
+            </div>
+          </div><!-- /arena-col -->
+        </div>
+      </div>
+
+      <!-- ══ DEPOSIT PAGE ══ -->
+      <div class="page" id="page-deposit">
+        <div class="inner-page">
+          <div class="page-hdr">
+            <img src="/img/diamond_lock.png" class="dl-icon-md page-hdr-icon" alt="DL"/>
+            <div><h2>Deposit Diamond Locks</h2><p>Donate in Growtopia — staff credits your balance after verification</p></div>
+          </div>
+          <div class="two-col">
+            <div class="steps-col">
+              <div class="step"><div class="step-n">1</div><div><div class="step-t">Enter the deposit world</div><div class="step-d">Open Growtopia and go to world:</div><div class="world-tag" id="dep-world">GV-DEPOSIT</div></div></div>
+              <div class="step"><div class="step-n">2</div><div><div class="step-t">Donate Diamond Locks</div><div class="step-d">Find the GrowVegas donation box and donate the amount of Diamond Locks you wish to deposit.</div></div></div>
+              <div class="step"><div class="step-n">3</div><div><div class="step-t">Add your username in the note</div><div class="step-d">In the optional donation note, write your <strong>GrowVegas username exactly</strong> as it appears on the website. This is how staff identifies your account.</div></div></div>
+              <div class="step"><div class="step-n">4</div><div><div class="step-t">Wait for verification</div><div class="step-d">After staff verifies the donation, your Diamond Locks will be credited to your GrowVegas balance automatically.</div>
+                <a class="discord-btn" id="discord-dep" href="#" target="_blank">
+                  <svg class="disc-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.492c-1.53-.69-3.17-1.2-4.885-1.49a.075.075 0 0 0-.079.036c-.21.369-.444.85-.608 1.23a18.566 18.566 0 0 0-5.487 0 12.36 12.36 0 0 0-.617-1.23A.077.077 0 0 0 8.562 3c-1.714.29-3.354.8-4.885 1.491a.07.07 0 0 0-.032.027C.533 9.093-.32 13.555.099 17.961a.08.08 0 0 0 .031.055 20.03 20.03 0 0 0 5.993 2.98.078.078 0 0 0 .084-.026 13.83 13.83 0 0 0 1.226-1.963.074.074 0 0 0-.041-.104 13.175 13.175 0 0 1-1.872-.878.075.075 0 0 1-.008-.125c.126-.093.252-.19.372-.287a.075.075 0 0 1 .078-.01c3.927 1.764 8.18 1.764 12.061 0a.075.075 0 0 1 .079.009c.12.098.245.195.372.288a.075.075 0 0 1-.006.125c-.598.344-1.22.635-1.873.877a.075.075 0 0 0-.041.105c.36.687.772 1.341 1.225 1.962a.077.077 0 0 0 .084.028 19.963 19.963 0 0 0 6.002-2.981.076.076 0 0 0 .032-.054c.5-5.094-.838-9.52-3.549-13.442a.06.06 0 0 0-.031-.028z"/></svg>
+                  Contact Support on Discord
+                </a>
+              </div></div>
+            </div>
+            <div class="form-col">
+              <div class="form-card">
+                <div class="fc-title">Log Your Deposit</div>
+                <p class="fc-sub">Fill this in after donating. Staff credits your balance after verifying on Discord.</p>
+                <div class="fg"><label>Growtopia ID</label><input id="dep-grow-id" type="text" placeholder="e.g. Player123" class="inp"/></div>
+                <div class="fg"><label>Discord Username</label><input id="dep-discord-un" type="text" placeholder="e.g. player#0000" class="inp"/></div>
+                <div class="fg"><label>Amount Donated (Diamond Locks)</label><input id="dep-amount" type="number" min="1" placeholder="e.g. 5" class="inp"/></div>
+                <button class="btn-primary w100" id="submit-dep">Submit Request</button>
+                <div class="form-status hidden" id="dep-status"></div>
+              </div>
+              <div class="form-card mt12">
+                <div class="fc-title">Deposit History</div>
+                <div class="dep-hist" id="dep-history"><div class="empty-msg">No deposits yet</div></div>
+              </div>
+              <div class="form-card mt12">
+                <div class="fc-title">🎁 First Deposit Bonus</div>
+                <div class="fc-sub">Your first deposit receives a <strong>2× bonus</strong> (up to 20 DL bonus)!<br>Example: Deposit 10 DL → receive 20 DL total</div>
+                <div class="wagering-info" id="dep-wagering-info"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ WITHDRAW PAGE ══ -->
+      <div class="page" id="page-withdraw">
+        <div class="inner-page">
+          <div class="page-hdr">
+            <img src="/img/diamond_lock.png" class="dl-icon-md page-hdr-icon" alt="DL"/>
+            <div><h2>Withdraw Diamond Locks</h2><p>Staff delivers in-game after your request</p></div>
+          </div>
+          <div class="two-col">
+            <div class="steps-col">
+              <div class="step"><div class="step-n">1</div><div><div class="step-t">Request withdrawal</div><div class="step-d">Enter amount below. Balance locks instantly.</div></div></div>
+              <div class="step"><div class="step-n">2</div><div><div class="step-t">Go to withdraw world</div><div class="step-d">Enter Growtopia:</div><div class="world-tag" id="wd-world">GV-WITHDRAW</div></div></div>
+              <div class="step"><div class="step-n">3</div><div><div class="step-t">Staff delivers</div><div class="step-d">Staff trades Diamond Locks to you in-game. Contact Discord if delayed.</div>
+                <a class="discord-btn" id="discord-wd" href="#" target="_blank">
+                  <svg class="disc-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.492c-1.53-.69-3.17-1.2-4.885-1.49a.075.075 0 0 0-.079.036c-.21.369-.444.85-.608 1.23a18.566 18.566 0 0 0-5.487 0 12.36 12.36 0 0 0-.617-1.23A.077.077 0 0 0 8.562 3c-1.714.29-3.354.8-4.885 1.491a.07.07 0 0 0-.032.027C.533 9.093-.32 13.555.099 17.961a.08.08 0 0 0 .031.055 20.03 20.03 0 0 0 5.993 2.98.078.078 0 0 0 .084-.026 13.83 13.83 0 0 0 1.226-1.963.074.074 0 0 0-.041-.104 13.175 13.175 0 0 1-1.872-.878.075.075 0 0 1-.008-.125c.126-.093.252-.19.372-.287a.075.075 0 0 1 .078-.01c3.927 1.764 8.18 1.764 12.061 0a.075.075 0 0 1 .079.009c.12.098.245.195.372.288a.075.075 0 0 1-.006.125c-.598.344-1.22.635-1.873.877a.075.075 0 0 0-.041.105c.36.687.772 1.341 1.225 1.962a.077.077 0 0 0 .084.028 19.963 19.963 0 0 0 6.002-2.981.076.076 0 0 0 .032-.054c.5-5.094-.838-9.52-3.549-13.442a.06.06 0 0 0-.031-.028z"/></svg>
+                  Contact Support
+                </a>
+              </div></div>
+            </div>
+            <div class="form-col">
+              <div class="form-card">
+                <div class="fc-title">Withdraw</div>
+                <div class="avail">Available: <strong id="wd-avail">0 DL</strong></div>
+                <div class="wagering-block" id="wagering-block">
+                  <div class="wag-title">📊 Wagering Progress</div>
+                  <div class="wag-bar-wrap"><div class="wag-bar" id="wag-bar"></div></div>
+                  <div class="wag-text" id="wag-text">Loading...</div>
+                  <div class="wag-locked" id="wag-locked"></div>
+                </div>
+                <div class="fg"><label>Amount (DL)</label><input id="wd-amount" type="number" min="1" placeholder="0" class="inp"/></div>
+                <button class="btn-primary w100" id="submit-wd">Request Withdrawal</button>
+                <div class="form-status hidden" id="wd-status"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ AFFILIATE PAGE ══ -->
+      <div class="page" id="page-affiliate">
+        <div class="inner-page">
+          <div class="page-hdr"><h2>👥 Affiliate Program</h2><p>Earn 1% of every bet your referrals make</p></div>
+          <div class="two-col">
+            <div class="form-col">
+              <div class="form-card">
+                <div class="fc-title">Your Referral Code</div>
+                <div class="ref-code-box"><span id="ref-code">—</span><button class="btn-sm" id="copy-ref">Copy</button></div>
+                <div class="fc-sub" style="margin-top:8px">Share this code. When friends register and play, you earn 1% of every bet — automatically.</div>
+              </div>
+              <div class="form-card mt12">
+                <div class="fc-title">📊 Stats</div>
+                <div class="aff-stats">
+                  <div class="aff-stat"><div class="aff-val" id="aff-referred">0</div><div class="aff-lbl">Referred Users</div></div>
+                  <div class="aff-stat"><div class="aff-val" id="aff-earnings">0 DL</div><div class="aff-lbl">Total Earned</div></div>
+                </div>
+              </div>
+            </div>
+            <div class="form-col">
+              <div class="form-card">
+                <div class="fc-title">Recent Referred Users</div>
+                <div id="aff-users-list"><div class="empty-msg">No referrals yet</div></div>
+              </div>
+              <div class="form-card mt12">
+                <div class="fc-title">Earnings History</div>
+                <div id="aff-earnings-list"><div class="empty-msg">No earnings yet</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ PROFILE PAGE ══ -->
+      <div class="page" id="page-profile">
+        <div class="inner-page">
+          <div class="page-hdr"><h2>👤 Profile</h2></div>
+          <div class="two-col">
+            <div class="form-col">
+              <div class="form-card">
+                <div class="profile-header">
+                  <div class="profile-av"></div>
+                  <div>
+                    <div class="profile-name" id="prof-username">—</div>
+                    <div class="profile-level" id="prof-level">Level 1</div>
+                    <div class="profile-title-badge" id="prof-title"></div>
+                  </div>
+                </div>
+                <div class="xp-bar-wrap"><div class="xp-bar" id="xp-bar"></div></div>
+                <div class="xp-text" id="xp-text">0 / 100 XP</div>
+                <div class="prof-stats">
+                  <div class="ps"><div class="ps-val" id="ps-matches">0</div><div class="ps-lbl">Matches</div></div>
+                  <div class="ps"><div class="ps-val" id="ps-wins">0</div><div class="ps-lbl">Wins</div></div>
+                  <div class="ps"><div class="ps-val" id="ps-wagered">0</div><div class="ps-lbl">Wagered</div></div>
+                </div>
+              </div>
+              <div class="form-card mt12">
+                <div class="fc-title">🏆 Titles</div>
+                <div id="titles-list"><div class="empty-msg">Play more to unlock titles!</div></div>
+              </div>
+            </div>
+            <div class="form-col">
+              <div class="form-card">
+                <div class="fc-title">📊 Wagering Progress</div>
+                <div class="wag-bar-wrap"><div class="wag-bar" id="prof-wag-bar"></div></div>
+                <div class="wag-text" id="prof-wag-text">No active wagering requirement</div>
+              </div>
+              <div class="form-card mt12">
+                <div class="fc-title">Transaction History</div>
+                <div class="tx-list" id="tx-list"><div class="empty-msg">No transactions</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ ADMIN PAGE ══ -->
+      <div class="page" id="page-admin">
+        <div class="inner-page">
+          <div class="page-hdr"><h2>⚙ Admin Panel</h2></div>
+          <div class="admin-grid">
+            <div class="form-card">
+              <div class="fc-title">Settings</div>
+              <div class="fg"><label>Deposit World</label><input id="adm-dep" class="inp" type="text"/></div>
+              <div class="fg"><label>Withdraw World</label><input id="adm-wd" class="inp" type="text"/></div>
+              <div class="fg"><label>Discord Link</label><input id="adm-disc" class="inp" type="text"/></div>
+              <div class="fg"><label>House Edge %</label><input id="adm-edge" class="inp" type="number"/></div>
+              <div class="fg"><label>Affiliate % per bet</label><input id="adm-aff" class="inp" type="number" step="0.1"/></div>
+              <div class="fg"><label>Signup Bonus (DL)</label><input id="adm-signup" class="inp" type="number"/></div>
+              <div class="fg"><label>Deposit Bonus Multiplier</label><input id="adm-dbmul" class="inp" type="number" step="0.1"/></div>
+              <div class="fg"><label>Max Deposit Bonus (DL)</label><input id="adm-dbmax" class="inp" type="number"/></div>
+              <button class="btn-primary w100" id="adm-save">Save Settings</button>
+              <div class="form-status hidden" id="adm-st"></div>
+            </div>
+            <div class="form-card">
+              <div class="fc-title">Pending Deposits</div>
+              <div class="admin-deps" id="adm-deps">Loading...</div>
+              <button class="btn-ghost mt8 w100" id="adm-refresh-deps">Refresh</button>
+            </div>
+            <div class="form-card">
+              <div class="fc-title">Users</div>
+              <div class="admin-users" id="adm-users">Loading...</div>
+              <button class="btn-ghost mt8 w100" id="adm-refresh-users">Refresh</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /pages-container -->
+
+    <!-- GLOBAL RIGHT SIDEBAR — always visible -->
+    <aside class="right-sidebar" id="right-sidebar">
+      <div class="rs-panel rs-lobby">
+        <div class="rs-title"><span class="green-dot"></span>Live Lobby</div>
+        <div class="rs-hint">Click a bet to join</div>
+        <div class="lobby-list" id="lobby-list"><div class="empty-msg">No one queuing</div></div>
+      </div>
+      <div class="rs-panel rs-chat">
+        <div class="rs-title">💬 Global Chat</div>
+        <div class="chat-msgs" id="chat-msgs"></div>
+        <div class="chat-input-row">
+          <input id="chat-inp" type="text" placeholder="Say something..." maxlength="200" class="chat-inp"/>
+          <button id="chat-send" class="btn-chat-send">→</button>
+        </div>
+      </div>
+    </aside>
+
+    </div><!-- /content-area -->
+  </div><!-- /main -->
+</div><!-- /shell -->
+</div><!-- /platform -->
+
+<!-- TIP MODAL -->
+<div class="modal-bg hidden" id="tip-modal">
+  <div class="modal">
+    <div class="modal-hdr"><span>💸 Send Tip</span><button class="modal-close" data-close="tip-modal">✕</button></div>
+    <div class="modal-body">
+      <div class="fg"><label>Username to tip</label><input id="tip-user" type="text" placeholder="Player123" class="inp"/></div>
+      <div class="fg"><label>Amount (DL)</label><input id="tip-amount" type="number" min="1" placeholder="1" class="inp"/></div>
+      <button class="btn-primary w100" id="confirm-tip">Send Tip</button>
+      <div class="form-status hidden" id="tip-status"></div>
+    </div>
+  </div>
+</div>
+
+<div id="toasts"></div>
+
+<!-- MOBILE BOTTOM NAV -->
+<nav class="mobile-nav" id="mobile-nav">
+  <button class="mnav-btn" onclick="selectAndPlay('VEME')">
+    <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5" fill="none"/><circle cx="10" cy="10" r="3"/></svg>
+    <span>VEME</span>
+  </button>
+  <button class="mnav-btn" onclick="selectAndPlay('QQ')">
+    <svg viewBox="0 0 20 20" fill="currentColor"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="11" y="3" width="6" height="6" rx="1"/><rect x="3" y="11" width="6" height="6" rx="1"/><rect x="11" y="11" width="6" height="6" rx="1"/></svg>
+    <span>QQ</span>
+  </button>
+  <button class="mnav-btn mnav-home" onclick="showPage('home')">
+    <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 2L2 8v10h5v-6h6v6h5V8z"/></svg>
+    <span>Home</span>
+  </button>
+  <button class="mnav-btn" onclick="selectAndPlay('CSN')">
+    <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 2l2.4 5.4L18 8.2l-4 3.9 1 5.5L10 15l-5 2.6 1-5.5-4-3.9 5.6-.8z"/></svg>
+    <span>CSN</span>
+  </button>
+  <button class="mnav-btn" onclick="selectAndPlay('BJ')">
+    <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 2C10 2 4 5 4 10c0 3.3 2.7 6 6 6s6-2.7 6-6c0-5-6-8-6-8z"/></svg>
+    <span>BJ</span>
+  </button>
+</nav>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/app.js"></script>
+</body>
+</html>

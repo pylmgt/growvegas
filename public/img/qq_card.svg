@@ -1,0 +1,39 @@
+<svg width="100%" viewBox="0 0 680 420" role="img" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <radialGradient id="qbg" cx="50%" cy="40%" r="70%"><stop offset="0%" stop-color="#0d1a2e"/><stop offset="100%" stop-color="#040810"/></radialGradient>
+  <radialGradient id="qglow1" cx="30%" cy="50%" r="40%"><stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.35"/><stop offset="100%" stop-color="#0ea5e9" stop-opacity="0"/></radialGradient>
+  <radialGradient id="qglow2" cx="70%" cy="50%" r="40%"><stop offset="0%" stop-color="#e879f9" stop-opacity="0.35"/><stop offset="100%" stop-color="#e879f9" stop-opacity="0"/></radialGradient>
+  <clipPath id="qcard"><rect width="680" height="420" rx="18"/></clipPath>
+</defs>
+<g clip-path="url(#qcard)">
+<rect width="680" height="420" fill="url(#qbg)"/>
+<ellipse cx="200" cy="190" rx="180" ry="160" fill="url(#qglow1)"/>
+<ellipse cx="480" cy="190" rx="180" ry="160" fill="url(#qglow2)"/>
+<g opacity="0.1" stroke="#0ea5e9" stroke-width="0.5"><line x1="0" y1="60" x2="680" y2="60"/><line x1="0" y1="120" x2="680" y2="120"/><line x1="0" y1="180" x2="680" y2="180"/><line x1="0" y1="240" x2="680" y2="240"/><line x1="0" y1="300" x2="680" y2="300"/><line x1="60" y1="0" x2="60" y2="330"/><line x1="120" y1="0" x2="120" y2="330"/><line x1="180" y1="0" x2="180" y2="330"/><line x1="240" y1="0" x2="240" y2="330"/><line x1="300" y1="0" x2="300" y2="330"/><line x1="380" y1="0" x2="380" y2="330"/><line x1="440" y1="0" x2="440" y2="330"/><line x1="500" y1="0" x2="500" y2="330"/><line x1="560" y1="0" x2="560" y2="330"/><line x1="620" y1="0" x2="620" y2="330"/></g>
+<rect x="60" y="30" width="4" height="4" fill="#0ea5e9" opacity="0.9"/><rect x="62" y="32" width="2" height="2" fill="#7dd3fc" opacity="0.7"/><rect x="600" y="25" width="4" height="4" fill="#e879f9" opacity="0.9"/><rect x="602" y="27" width="2" height="2" fill="#f0abfc" opacity="0.7"/><rect x="140" y="50" width="2" height="2" fill="#0ea5e9" opacity="0.7"/><rect x="530" y="45" width="2" height="2" fill="#e879f9" opacity="0.7"/><rect x="30" y="180" width="3" height="3" fill="#f5c842" opacity="0.6"/><rect x="645" y="160" width="3" height="3" fill="#f5c842" opacity="0.6"/>
+<rect x="60" y="55" width="240" height="252" rx="12" fill="#0c1832" stroke="#0ea5e9" stroke-width="2"/>
+<rect x="60" y="55" width="8" height="8" fill="#0ea5e9"/><rect x="292" y="55" width="8" height="8" fill="#0ea5e9"/><rect x="60" y="299" width="8" height="8" fill="#0ea5e9"/><rect x="292" y="299" width="8" height="8" fill="#0ea5e9"/>
+<text x="180" y="218" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="130" font-weight="900" fill="#0ea5e9" opacity="0.15">9</text>
+<text x="180" y="218" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="130" font-weight="900" fill="#38bdf8">9</text>
+<rect x="60" y="100" width="240" height="2" fill="#000" opacity="0.15"/><rect x="60" y="130" width="240" height="2" fill="#000" opacity="0.15"/><rect x="60" y="160" width="240" height="2" fill="#000" opacity="0.15"/><rect x="60" y="190" width="240" height="2" fill="#000" opacity="0.15"/><rect x="60" y="220" width="240" height="2" fill="#000" opacity="0.15"/><rect x="60" y="250" width="240" height="2" fill="#000" opacity="0.15"/>
+<text x="180" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#7dd3fc" letter-spacing="2">PLAYER 1</text>
+<rect x="100" y="288" width="160" height="2" fill="#0ea5e9" opacity="0.4"/>
+<line x1="340" y1="80" x2="340" y2="310" stroke="#f5c842" stroke-width="1" opacity="0.3" stroke-dasharray="6,4"/>
+<rect x="325" y="163" width="30" height="30" rx="4" fill="#1a1200"/><rect x="325" y="163" width="30" height="30" rx="4" fill="none" stroke="#f5c842" stroke-width="1.5"/>
+<text x="340" y="183" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="13" font-weight="900" fill="#f5c842">VS</text>
+<rect x="380" y="55" width="240" height="252" rx="12" fill="#1a0a1e" stroke="#e879f9" stroke-width="2"/>
+<rect x="380" y="55" width="8" height="8" fill="#e879f9"/><rect x="612" y="55" width="8" height="8" fill="#e879f9"/><rect x="380" y="299" width="8" height="8" fill="#e879f9"/><rect x="612" y="299" width="8" height="8" fill="#e879f9"/>
+<text x="500" y="218" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="130" font-weight="900" fill="#e879f9" opacity="0.15">7</text>
+<text x="500" y="218" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="130" font-weight="900" fill="#e879f9">7</text>
+<rect x="380" y="100" width="240" height="2" fill="#000" opacity="0.15"/><rect x="380" y="130" width="240" height="2" fill="#000" opacity="0.15"/><rect x="380" y="160" width="240" height="2" fill="#000" opacity="0.15"/><rect x="380" y="190" width="240" height="2" fill="#000" opacity="0.15"/><rect x="380" y="220" width="240" height="2" fill="#000" opacity="0.15"/><rect x="380" y="250" width="240" height="2" fill="#000" opacity="0.15"/>
+<text x="500" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#f0abfc" letter-spacing="2">PLAYER 2</text>
+<rect x="420" y="288" width="160" height="2" fill="#e879f9" opacity="0.4"/>
+<rect x="0" y="330" width="680" height="90" fill="#04080f" opacity="0.92"/>
+<line x1="0" y1="330" x2="340" y2="330" stroke="#0ea5e9" stroke-width="1.5" opacity="0.6"/>
+<line x1="340" y1="330" x2="680" y2="330" stroke="#e879f9" stroke-width="1.5" opacity="0.6"/>
+<polygon points="46,357 49,348 52,357 61,357 54,363 57,372 49,366 41,372 44,363 37,357" fill="#0ea5e9" opacity="0.8"/>
+<polygon points="634,357 637,348 640,357 649,357 642,363 645,372 637,366 629,372 632,363 625,357" fill="#e879f9" opacity="0.8"/>
+<text x="340" y="378" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="48" font-weight="900" fill="#fff" letter-spacing="12">QQ</text>
+<text x="340" y="408" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#7dd3fc" letter-spacing="3">GrowVegas</text>
+</g>
+</svg>
